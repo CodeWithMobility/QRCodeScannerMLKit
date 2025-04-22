@@ -37,6 +37,20 @@ android {
     buildFeatures {
         compose = true
     }
+
+    packaging {
+        resources {
+            excludes += setOf(
+                "META-INF/LICENSE.md",
+                "META-INF/LICENSE-notice.md",
+                "META-INF/LICENSE",
+                "META-INF/NOTICE",
+                "META-INF/DEPENDENCIES",
+                "META-INF/AL2.0",
+                "META-INF/LGPL2.1"
+            )
+        }
+    }
 }
 
 dependencies {
@@ -65,7 +79,15 @@ dependencies {
     implementation(libs.androidx.camera.lifecycle)
     implementation(libs.androidx.camera.view)
 
-
     implementation(libs.barcode.scanning)
+
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.turbine)
+    testImplementation(libs.mockk)
+
+    androidTestImplementation(libs.androidx.core)
+    androidTestImplementation(libs.androidx.junit.v115)
+    androidTestImplementation(libs.mockk.android)
 
 }

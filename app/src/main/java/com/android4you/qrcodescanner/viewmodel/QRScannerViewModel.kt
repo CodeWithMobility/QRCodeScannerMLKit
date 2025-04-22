@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import com.android4you.qrcodescanner.model.QRScannerUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 
 class QRScannerViewModel : ViewModel() {
 
@@ -30,6 +31,15 @@ class QRScannerViewModel : ViewModel() {
             scannedText = null
         )
     }
+
+//    fun dismissBottomSheet() {
+//        _uiState.update {
+//            it.copy(
+//                scannedText = null,
+//                isBottomSheetVisible = false
+//            )
+//        }
+//    }
 
     fun toggleFlashlight() {
         _uiState.value = _uiState.value.copy(

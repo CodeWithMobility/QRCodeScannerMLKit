@@ -1,4 +1,4 @@
-package com.android4you.qrcodescanner
+package com.android4you.qrcodescanner.camera
 
 import androidx.annotation.OptIn
 import androidx.camera.core.ExperimentalGetImage
